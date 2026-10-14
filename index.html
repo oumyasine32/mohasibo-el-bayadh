@@ -1,0 +1,1053 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10251f">
+  <meta name="description" content="منصة محاسبو المؤسسات التربوية لولاية البيض، فضاء رقمي للتسيير المالي والمحاسبي وتبادل المعلومات المهنية.">
+  <title>محاسبو المؤسسات التربوية | ولاية البيض</title>
+
+  <style>
+    :root {
+      --bg: #f3f5f4;
+      --surface: #ffffff;
+      --primary: #153b30;
+      --primary-light: #205745;
+      --gold: #d6b56d;
+      --text: #202b27;
+      --muted: #718078;
+      --border: #e1e8e3;
+      --radius: 16px;
+      --shadow: 0 8px 28px rgba(19, 48, 38, .07);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Tahoma, Arial, sans-serif;
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1160px, 92%);
+      margin-inline: auto;
+    }
+
+    /* رأس الصفحة */
+    .topbar {
+      background: #0d211b;
+      color: #e5eee9;
+      font-size: 13px;
+      padding: 8px 0;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #70c99c;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 5;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 88px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 53px;
+      height: 53px;
+      flex-shrink: 0;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      background: var(--primary);
+      border: 1px solid #2c5a49;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .brand h1 {
+      font-size: 17px;
+      line-height: 1.7;
+      margin: 0;
+      color: var(--primary);
+    }
+
+    .brand p {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 14px;
+    }
+
+    .nav a {
+      color: #47574f;
+      transition: color .2s;
+    }
+
+    .nav a:hover {
+      color: var(--primary-light);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: var(--primary);
+      color: white;
+      border: 0;
+      border-radius: 10px;
+      padding: 8px 13px;
+    }
+
+    /* الواجهة الرئيسية */
+    .hero {
+      padding: 54px 0 38px;
+      background:
+        radial-gradient(ellipse at 0% 0%, rgba(214,181,109,.15), transparent 48%),
+        linear-gradient(135deg, #153b30, #10271f);
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.45fr .75fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: #f0d89e;
+      font-size: 13px;
+      border: 1px solid rgba(214,181,109,.35);
+      background: rgba(214,181,109,.08);
+      border-radius: 30px;
+      padding: 5px 13px;
+    }
+
+    .hero h2 {
+      font-size: clamp(27px, 4vw, 43px);
+      line-height: 1.55;
+      margin: 18px 0 12px;
+      max-width: 680px;
+    }
+
+    .hero h2 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      color: #d4e0d9;
+      font-size: 15px;
+      max-width: 640px;
+      margin: 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 19px;
+      border: 1px solid transparent;
+      border-radius: 11px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: transform .2s, background .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #1c3026;
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,.3);
+      color: white;
+      background: rgba(255,255,255,.05);
+    }
+
+    .hero-panel {
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      padding: 25px;
+      border-radius: 20px;
+    }
+
+    .hero-panel .panel-symbol {
+      width: 57px;
+      height: 57px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: var(--gold);
+      background: rgba(214,181,109,.13);
+      font-size: 29px;
+      margin-bottom: 13px;
+    }
+
+    .hero-panel h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .hero-panel p {
+      font-size: 13px;
+    }
+
+    .panel-divider {
+      height: 1px;
+      background: rgba(255,255,255,.13);
+      margin: 19px 0;
+    }
+
+    .panel-note {
+      font-size: 12px;
+      color: #e5d5ae;
+    }
+
+    /* المحتوى */
+    main {
+      padding: 32px 0 50px;
+    }
+
+    .section {
+      margin-bottom: 37px;
+      scroll-margin-top: 20px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 15px;
+      margin-bottom: 17px;
+    }
+
+    .section-heading h2 {
+      font-size: 21px;
+      margin: 0;
+      color: var(--primary);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 3px 0 0;
+    }
+
+    .section-label {
+      color: #9a7b3c;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: .5px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 21px;
+      box-shadow: var(--shadow);
+      min-width: 0;
+    }
+
+    .feature-card {
+      transition: transform .2s, border-color .2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-3px);
+      border-color: #a9c1b3;
+    }
+
+    .feature-icon {
+      width: 47px;
+      height: 47px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: #eaf1ec;
+      color: var(--primary);
+      font-size: 23px;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      color: var(--primary);
+      font-size: 16px;
+      margin: 0 0 7px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .card-link {
+      color: var(--primary-light);
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .card-link span {
+      margin-right: 5px;
+    }
+
+    /* الإعلانات */
+    .announcement-layout {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr;
+      gap: 17px;
+    }
+
+    .announcement {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .announcement:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .announcement:first-child {
+      padding-top: 0;
+    }
+
+    .announcement-icon {
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #f4efdf;
+      font-size: 19px;
+    }
+
+    .announcement h3 {
+      font-size: 14px;
+      margin: 0 0 4px;
+    }
+
+    .announcement p {
+      font-size: 12px;
+      margin: 0;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 7px;
+      padding: 2px 9px;
+      background: #edf4ee;
+      color: #2d6b49;
+      border-radius: 20px;
+      font-size: 11px;
+    }
+
+    .notice-card {
+      background: var(--primary);
+      color: white;
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .notice-card h3 {
+      color: white;
+      font-size: 19px;
+    }
+
+    .notice-card p {
+      color: #d5e1da;
+    }
+
+    .notice-card .btn {
+      margin-top: 8px;
+    }
+
+    /* التواصل */
+    .contact-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .contact-box h3 {
+      margin: 0 0 5px;
+      color: var(--primary);
+    }
+
+    .contact-box p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .contact-placeholder {
+      font-size: 12px;
+      color: var(--muted);
+      background: #f3f5f4;
+      padding: 9px 13px;
+      border-radius: 9px;
+    }
+
+    /* تذييل الصفحة */
+    footer {
+      background: #0d211b;
+      color: #d7e1da;
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    footer p {
+      margin: 3px 0 0;
+      font-size: 12px;
+      color: #aabbb0;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 17px;
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    /* الهاتف والكمبيوتر اللوحي */
+    @media (max-width: 850px) {
+      .nav {
+        gap: 12px;
+        font-size: 12px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr .7fr;
+        gap: 20px;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: 92%;
+      }
+
+      .topbar-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .header-inner {
+        min-height: 74px;
+        gap: 10px;
+      }
+
+      .brand-logo {
+        width: 43px;
+        height: 43px;
+        font-size: 21px;
+      }
+
+      .brand h1 {
+        font-size: 13px;
+      }
+
+      .brand p {
+        font-size: 10px;
+      }
+
+      .menu-toggle {
+        display: block;
+        flex-shrink: 0;
+      }
+
+      .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: white;
+        padding: 15px 4%;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav.open {
+        display: flex;
+      }
+
+      .nav a {
+        padding: 10px 0;
+        border-bottom: 1px solid #edf0ee;
+        font-size: 14px;
+      }
+
+      .nav a:last-child {
+        border-bottom: 0;
+      }
+
+      .hero {
+        padding: 35px 0 30px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 27px;
+      }
+
+      .hero p {
+        font-size: 13px;
+      }
+
+      .hero-panel {
+        padding: 18px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .card {
+        padding: 18px;
+      }
+
+      .feature-card {
+        display: grid;
+        grid-template-columns: 45px 1fr;
+        column-gap: 13px;
+      }
+
+      .feature-icon {
+        grid-row: 1 / span 3;
+        width: 43px;
+        height: 43px;
+        margin-bottom: 0;
+      }
+
+      .feature-card h3 {
+        align-self: end;
+      }
+
+      .feature-card p {
+        margin-bottom: 9px;
+      }
+
+      .announcement-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading h2 {
+        font-size: 18px;
+      }
+
+      .contact-box {
+        padding: 18px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>فضاء مهني خاص بالمسيّرين الماليين</span>
+      <span class="status">
+        <span class="status-dot"></span>
+        الولاية: البيّض
+      </span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container header-inner">
+
+      <a href="#home" class="brand" aria-label="العودة إلى الصفحة الرئيسية">
+        <div class="brand-logo" aria-hidden="true">م</div>
+        <div>
+          <h1>محاسبو المؤسسات التربوية</h1>
+          <p>ولاية البيّض — الجزائر</p>
+        </div>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-expanded="false"
+        aria-controls="mainNav"
+        aria-label="فتح القائمة"
+      >☰ القائمة</button>
+
+      <nav class="nav" id="mainNav" aria-label="القائمة الرئيسية">
+        <a href="#home">الرئيسية</a>
+        <a href="#services">الخدمات</a>
+        <a href="#announcements">الإعلانات</a>
+        <a href="#resources">الموارد المهنية</a>
+        <a href="#contact">اتصل بنا</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+
+      <div>
+        <span class="eyebrow">✦ فضاؤنا المهني المشترك</span>
+
+        <h2>
+          نحو تسيير مالي أكثر
+          <span>تنظيمًا وفعالية</span>
+        </h2>
+
+        <p>
+          منصة رقمية موجهة للمسيّرين الماليين للمؤسسات التربوية
+          بولاية البيّض، تهدف إلى تنظيم الموارد المهنية وتسهيل
+          الوصول إلى الوثائق والإعلانات والمعلومات المفيدة.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#services">
+            اكتشف الخدمات ←
+          </a>
+          <a class="btn btn-outline" href="#announcements">
+            آخر الإعلانات
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <div class="panel-symbol" aria-hidden="true">▤</div>
+        <h3>فضاء التسيير المالي</h3>
+        <p>
+          مكان موحد للموارد المهنية والمستندات والإعلانات
+          التي يحتاج إليها مستخدمو المنصة.
+        </p>
+        <div class="panel-divider"></div>
+        <div class="panel-note">
+          التنظيم • الدقة • السرعة • التعاون
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <main class="container">
+
+    <section class="section" id="services">
+      <div class="section-heading">
+        <div>
+          <span class="section-label">SERVICES</span>
+          <h2>الخدمات الرئيسية</h2>
+          <p>الوصول السريع إلى الأقسام المهنية.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+
+        <article class="card feature-card">
+          <div class="feature-icon" aria-hidden="true">📁</div>
+          <h3>الوثائق والنماذج</h3>
+          <p>
+            فضاء مخصص للنماذج والوثائق الإدارية والمحاسبية
+            التي ستتم إضافتها وتنظيمها حسب النوع.
+          </p>
+          <a class="card-link" href="#resources">
+            استكشف الموارد <span>←</span>
+          </a>
+        </article>
+
+        <article class="card feature-card">
+          <div class="feature-icon" aria-hidden="true">📢</div>
+          <h3>الإعلانات المهنية</h3>
+          <p>
+            متابعة الإعلانات والتنبيهات المهنية والمستجدات
+            التي تهم المؤسسات التربوية.
+          </p>
+          <a class="card-link" href="#announcements">
+            عرض الإعلانات <span>←</span>
+          </a>
+        </article>
+
+        <article class="card feature-card">
+          <div class="feature-icon" aria-hidden="true">✉️</div>
+          <h3>المراسلات المهنية</h3>
+          <p>
+            قسم مخصص لتطوير نظام مراسلات داخل المنصة
+            بعد إعداد الحسابات والصلاحيات.
+          </p>
+          <a class="card-link" href="#future">
+            تفاصيل المشروع <span>←</span>
+          </a>
+        </article>
+
+        <article class="card feature-card">
+          <div class="feature-icon" aria-hidden="true">🏫</div>
+          <h3>المؤسسات التربوية</h3>
+          <p>
+            قسم مخصص لتنظيم بيانات المؤسسات وربطها
+            بحسابات المستخدمين المخولين.
+          </p>
+          <a class="card-link" href="#future">
+            تفاصيل المشروع <span>←</span>
+          </a>
+        </article>
+
+        <article class="card feature-card">
+          <div class="feature-icon" aria-hidden="true">📚</div>
+          <h3>النصوص والمراجع</h3>
+          <p>
+            تجميع المراجع والنصوص القانونية والتنظيمية
+            ذات الصلة بالتسيير المالي والمحاسبي.
+          </p>
+          <a class="card-link" href="#resources">
+            الموارد المهنية <span>←</span>
+          </a>
+        </article>
+
+        <article class="card feature-card">
+          <div class="feature-icon" aria-hidden="true">🤝</div>
+          <h3>التعاون المهني</h3>
+          <p>
+            مساحة مستقبلية لتبادل الخبرات والأسئلة
+            المهنية وفق قواعد واضحة للاستخدام.
+          </p>
+          <a class="card-link" href="#future">
+            تفاصيل المشروع <span>←</span>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section" id="announcements">
+      <div class="section-heading">
+        <div>
+          <span class="section-label">ANNOUNCEMENTS</span>
+          <h2>الإعلانات والمستجدات</h2>
+          <p>ستظهر هنا الإعلانات التي تتم إضافتها إلى المنصة.</p>
+        </div>
+      </div>
+
+      <div class="announcement-layout">
+
+        <div class="card">
+          <div class="announcement">
+            <div class="announcement-icon" aria-hidden="true">📌</div>
+            <div>
+              <h3>الإعلانات المهنية</h3>
+              <p>
+                سيخصص هذا القسم لنشر الإعلانات المتعلقة
+                بالتسيير المالي للمؤسسات التربوية.
+              </p>
+              <span class="tag">قسم قيد الإعداد</span>
+            </div>
+          </div>
+
+          <div class="announcement">
+            <div class="announcement-icon" aria-hidden="true">📄</div>
+            <div>
+              <h3>المستندات الجديدة</h3>
+              <p>
+                ستعرض هنا النماذج والوثائق الجديدة
+                عند إضافتها من لوحة الإدارة.
+              </p>
+              <span class="tag">قسم قيد الإعداد</span>
+            </div>
+          </div>
+
+          <div class="announcement">
+            <div class="announcement-icon" aria-hidden="true">⚖️</div>
+            <div>
+              <h3>النصوص التنظيمية</h3>
+              <p>
+                قسم للمراجع القانونية والتنظيمية
+                مع مراعاة التحقق من مصدر كل وثيقة وتاريخها.
+              </p>
+              <span class="tag">قسم قيد الإعداد</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="notice-card">
+          <div style="font-size:30px" aria-hidden="true">🔔</div>
+          <h3>تابع المستجدات</h3>
+          <p>
+            ستتم إضافة نظام تنبيهات وإشعارات للمستخدمين
+            بعد إنشاء حساباتهم وربط المنصة بقاعدة البيانات.
+          </p>
+          <a class="btn btn-gold" href="#future">
+            مراحل التطوير
+          </a>
+        </aside>
+
+      </div>
+    </section>
+
+    <section class="section" id="resources">
+      <div class="section-heading">
+        <div>
+          <span class="section-label">RESOURCES</span>
+          <h2>الموارد المهنية</h2>
+          <p>مساحة ستجمع الوثائق والمراجع حسب تصنيفاتها.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+
+        <article class="card">
+          <div class="feature-icon" aria-hidden="true">📒</div>
+          <h3>المحاسبة العمومية</h3>
+          <p>وثائق ومراجع مرتبطة بالمحاسبة العمومية.</p>
+        </article>
+
+        <article class="card">
+          <div class="feature-icon" aria-hidden="true">💰</div>
+          <h3>الميزانية والتسيير المالي</h3>
+          <p>موارد تخص الميزانية وتنفيذ العمليات المالية.</p>
+        </article>
+
+        <article class="card">
+          <div class="feature-icon" aria-hidden="true">🗂️</div>
+          <h3>النماذج الإدارية</h3>
+          <p>نماذج منظمة حسب الاستخدام ونوع المؤسسة.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section" id="future">
+      <div class="section-heading">
+        <div>
+          <span class="section-label">PROJECT ROADMAP</span>
+          <h2>مراحل تطوير المنصة</h2>
+          <p>الأقسام التالية تحتاج إلى برمجة وربط فعلي قبل استعمالها.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+
+        <article class="card">
+          <div class="feature-icon" aria-hidden="true">🔐</div>
+          <h3>حسابات المستخدمين</h3>
+          <p>
+            تسجيل الدخول، التحقق من هوية المستخدم،
+            وإدارة صلاحيات الوصول.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="feature-icon" aria-hidden="true">💬</div>
+          <h3>المراسلات الداخلية</h3>
+          <p>
+            إنشاء الرسائل وإرسالها وحفظها وإظهار التنبيهات
+            وفق صلاحيات كل مستخدم.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="feature-icon" aria-hidden="true">🛡️</div>
+          <h3>لوحة الإدارة</h3>
+          <p>
+            إدارة الحسابات والمؤسسات والوثائق والإعلانات
+            وسجل العمليات بطريقة آمنة.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-heading">
+        <div>
+          <span class="section-label">CONTACT</span>
+          <h2>اتصل بنا</h2>
+          <p>سيتم إعداد وسائل الاتصال بعد تحديد بيانات المسؤول عن المنصة.</p>
+        </div>
+      </div>
+
+      <div class="contact-box">
+        <div>
+          <h3>نحن نعمل على تطوير فضاء مهني مشترك</h3>
+          <p>
+            ستتم إضافة وسائل التواصل الرسمية عند تجهيزها.
+          </p>
+        </div>
+        <span class="contact-placeholder">
+          معلومات الاتصال ستضاف لاحقًا
+        </span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>محاسبو المؤسسات التربوية — ولاية البيّض</strong>
+        <p>فضاء مهني للتنظيم والتعاون وتبادل الموارد.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#services">الخدمات</a>
+        <a href="#resources">الموارد</a>
+        <a href="#contact">التواصل</a>
+      </div>
+
+      <p>© <span id="year"></span> — جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = mainNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "✕ إغلاق" : "☰ القائمة";
+    });
+
+    mainNav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰ القائمة";
+      });
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
